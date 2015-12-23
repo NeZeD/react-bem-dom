@@ -1,30 +1,32 @@
-var ReactBEMDOMServer = require('../server'),
-    ReactBEM = require('react-bem'),
-    InnerBlock = ReactBEM.createClass({
-        render: function() {
-            return {
-                block: 'inner-block',
-                content: 'inside'
-            };
-        }
-    }),
-    Block = ReactBEM.createClass({
-        render: function() {
-            return {
-                block: 'test',
-                content: [
-                    'data',
-                    {
-                        block: InnerBlock,
-                        props: {
-                            key: 'in',
-                            ref: 'deepest block'
-                        }
+import * as ReactBEMDOMServer from '../src/server';
+import {createClass} from 'react-bem';
+
+const InnerBlock = createClass({
+    render: function() {
+        return {
+            block: 'inner-block',
+            content: 'inside'
+        };
+    }
+});
+
+const Block = createClass({
+    render: function() {
+        return {
+            block: 'test',
+            content: [
+                'data',
+                {
+                    block: InnerBlock,
+                    props: {
+                        key: 'in',
+                        ref: 'deepest block'
                     }
-                ]
-            };
-        }
-    });
+                }
+            ]
+        };
+    }
+});
 
 describe('ReactBEMDOMServer', function() {
 

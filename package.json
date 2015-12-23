@@ -11,20 +11,23 @@
     "react-dom": "0.14.x"
   },
   "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-preset-es2015-loose": "^6.1.4",
+    "babel-register": "^6.3.13",
     "eslint": "^1.10.3",
     "eslint-config-yandex": "^1.0.5",
     "jasmine": "^2.4.1",
     "jsdom": "^7.2.0",
     "react": "0.14.x",
     "react-bem": "github:nezed/bem-react#react@0.14",
-    "react-dom": "0.14.x"
+    "react-dom": "0.14.x",
+    "rimraf": "^2.5.0"
   },
   "scripts": {
     "pretest": "eslint .",
-    "test": "node --require ./spec/helpers/emulate-dom.js ./node_modules/jasmine/bin/jasmine.js"
-  },
-  "engines": {
-    "node": ">=4"
+    "test": "jasmine",
+    "preversion": "npm run build",
+    "build": "rimraf lib && babel ./src -d lib"
   },
   "repository": "react-bem/react-bem-dom"
 }

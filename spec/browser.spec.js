@@ -1,30 +1,32 @@
-var ReactBEMDOM = require('../'),
-    ReactBEM = require('react-bem'),
-    InnerBlock = ReactBEM.createClass({
-        render: function() {
-            return {
-                block: 'inner-block',
-                content: 'inside'
-            };
-        }
-    }),
-    Block = ReactBEM.createClass({
-        render: function() {
-            return {
-                block: 'test',
-                content: [
-                    'data',
-                    {
-                        block: InnerBlock,
-                        props: {
-                            key: 'in',
-                            ref: 'deepest block'
-                        }
+import * as ReactBEMDOM from '../src/';
+import {createClass} from 'react-bem';
+
+const InnerBlock = createClass({
+    render: function() {
+        return {
+            block: 'inner-block',
+            content: 'inside'
+        };
+    }
+});
+
+const Block = createClass({
+    render: function() {
+        return {
+            block: 'test',
+            content: [
+                'data',
+                {
+                    block: InnerBlock,
+                    props: {
+                        key: 'in',
+                        ref: 'deepest block'
                     }
-                ]
-            };
-        }
-    });
+                }
+            ]
+        };
+    }
+});
 
 describe('ReactBEMDOM in browser', function() {
     var container,
@@ -65,8 +67,8 @@ describe('ReactBEMDOM in browser', function() {
     });
 
     it('should throw "findDOMNode was called on an unmounted component."', function() {
-        expect(function() {
-            ReactBEMDOM.findDOMNode(app);
-        }).toThrowError(/Invariant/);
+        expect(
+            () => ReactBEMDOM.findDOMNode(app)
+        ).toThrowError(/Invariant/);
     });
 });
