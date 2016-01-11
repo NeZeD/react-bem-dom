@@ -1,0 +1,33 @@
+{
+  "name": "react-bem-dom",
+  "version": "0.1.0",
+  "description": "Top-level wrapper for `react-bem`",
+  "main": "index.js",
+  "author": "Dmitry Naumov <nezed@ya.ru>",
+  "license": "ISC",
+  "peerDependencies": {
+    "react": "0.14.x",
+    "react-bem": "^0.0.10",
+    "react-dom": "0.14.x"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-preset-es2015-loose": "^6.1.4",
+    "babel-register": "^6.3.13",
+    "eslint": "^1.10.3",
+    "eslint-config-yandex": "^1.0.5",
+    "jasmine": "^2.4.1",
+    "jsdom": "^7.2.0",
+    "react": "0.14.x",
+    "react-bem": "github:nezed/bem-react#react@0.14",
+    "react-dom": "0.14.x",
+    "rimraf": "^2.5.0"
+  },
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "jasmine",
+    "preversion": "npm run build",
+    "build": "rimraf lib && babel ./src -d lib"
+  },
+  "repository": "react-bem/react-bem-dom"
+}
