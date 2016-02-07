@@ -2,7 +2,7 @@
   "name": "react-bem-dom",
   "version": "0.1.0",
   "description": "Top-level wrapper for `react-bem`",
-  "main": "index.js",
+  "main": "lib/index.js",
   "author": "Dmitry Naumov <nezed@ya.ru>",
   "license": "ISC",
   "peerDependencies": {
@@ -19,7 +19,7 @@
     "jasmine": "^2.4.1",
     "jsdom": "^7.2.0",
     "react": "0.14.x",
-    "react-bem": "github:nezed/bem-react#react@0.14",
+    "react-bem": "github:react-bem/react-bem#e25cde",
     "react-dom": "0.14.x",
     "rimraf": "^2.5.0"
   },
