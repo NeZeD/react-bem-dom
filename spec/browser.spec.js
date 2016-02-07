@@ -69,6 +69,6 @@ describe('ReactBEMDOM in browser', function() {
     it('should throw "findDOMNode was called on an unmounted component."', function() {
         expect(
             () => ReactBEMDOM.findDOMNode(app)
-        ).toThrowError(/Invariant/);
+        ).toThrowError(/was called on an unmounted component/);
     });
 });
